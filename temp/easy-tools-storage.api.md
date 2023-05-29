@@ -5,6 +5,18 @@
 ```ts
 
 // @public
+export const clearStorage: IClearStorage;
+
+// @public
+export const clearStorageAsync: IClearStorage;
+
+// @public
+export const getStorage: IGetStorage;
+
+// @public
+export const getStorageAsync: IGetStorageAsync;
+
+// @public
 export interface ICheck {
     // (undocumented)
     (options: ICheckParams): string
@@ -57,6 +69,18 @@ export interface ISetStorage {
     // (undocumented)
     (type: storageType, key: string, data: unknown): void
 }
+
+// @public
+export const removeStorage: IRemoveStorage;
+
+// @public
+export const removeStorageAsync: IRemoveStorage;
+
+// @public
+export const setStorage: ISetStorage;
+
+// @public
+export const setStorageAsync: ISetStorage;
 
 // @public
 export type storageFullType = 'sessionStorage' | 'localStorage'

@@ -173,6 +173,102 @@
       "preserveMemberOrder": false,
       "members": [
         {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!clearStorage:var",
+          "docComment": "/**\n * 同步清空 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "clearStorage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClearStorage",
+              "canonicalReference": "easy-tools-storage!IClearStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "clearStorage",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!clearStorageAsync:var",
+          "docComment": "/**\n * 异步清空 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "clearStorageAsync: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClearStorage",
+              "canonicalReference": "easy-tools-storage!IClearStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "clearStorageAsync",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!getStorage:var",
+          "docComment": "/**\n * 同步获取 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getStorage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IGetStorage",
+              "canonicalReference": "easy-tools-storage!IGetStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getStorage",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!getStorageAsync:var",
+          "docComment": "/**\n * 异步获取 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getStorageAsync: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IGetStorageAsync",
+              "canonicalReference": "easy-tools-storage!IGetStorageAsync:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getStorageAsync",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
           "kind": "Interface",
           "canonicalReference": "easy-tools-storage!ICheck:interface",
           "docComment": "/**\n * 检查参数\n *\n * @public\n */\n",
@@ -822,6 +918,102 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!removeStorage:var",
+          "docComment": "/**\n * 同步移除 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "removeStorage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IRemoveStorage",
+              "canonicalReference": "easy-tools-storage!IRemoveStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "removeStorage",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!removeStorageAsync:var",
+          "docComment": "/**\n * 异步移除 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "removeStorageAsync: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IRemoveStorage",
+              "canonicalReference": "easy-tools-storage!IRemoveStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "removeStorageAsync",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!setStorage:var",
+          "docComment": "/**\n * 同步设置 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "setStorage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ISetStorage",
+              "canonicalReference": "easy-tools-storage!ISetStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "setStorage",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "easy-tools-storage!setStorageAsync:var",
+          "docComment": "/**\n * 异步设置 Storage 接口声明\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "setStorageAsync: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ISetStorage",
+              "canonicalReference": "easy-tools-storage!ISetStorage:interface"
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "setStorageAsync",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         },
         {
           "kind": "TypeAlias",

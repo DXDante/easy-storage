@@ -76,3 +76,51 @@ export interface IRemoveStorage {
 export interface IClearStorage {
   (type: storageType | 'all'): void
 }
+
+/**
+ * @public
+ * 同步获取 Storage 接口声明
+ */
+export declare const getStorage: IGetStorage
+
+/**
+ * @public
+ * 异步获取 Storage 接口声明
+ */
+export declare const getStorageAsync: IGetStorageAsync
+
+/**
+ * @public
+ * 同步设置 Storage 接口声明
+ */
+export declare const setStorage: ISetStorage
+
+/**
+ * @public
+ * 异步设置 Storage 接口声明
+ */
+export declare const setStorageAsync: ISetStorage
+
+/**
+ * @public
+ * 同步移除 Storage 接口声明
+ */
+export declare const removeStorage: IRemoveStorage
+
+/**
+ * @public
+ * 异步移除 Storage 接口声明
+ */
+export declare const removeStorageAsync: IRemoveStorage
+
+/**
+ * @public
+ * 同步清空 Storage 接口声明
+ */
+export declare const clearStorage: IClearStorage
+
+/**
+ * @public
+ * 异步清空 Storage 接口声明
+ */
+export declare const clearStorageAsync: IClearStorage

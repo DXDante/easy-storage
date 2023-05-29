@@ -1,0 +1,61 @@
+{
+  "name": "easy-tools-storage",
+  "version": "1.0.0",
+  "description": "一个支持同步、异步用于浏览器中本地 Storage 存储的工具",
+  "keywords": [
+    "easy-tools-storage",
+    "storage",
+    "localStorage",
+    "sessionStorage",
+    "typescript",
+    "promise"
+  ],
+  "author": "Dante-Master <396840617@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DXDante/easy-storage"
+  },
+  "bugs": "https://github.com/DXDante/easy-storage/issues",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "etc",
+    "temp",
+    "README.md",
+    "package.json"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "browser": "dist/index.min.js",
+  "types": "dist/typings/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/typings/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*"
+  },
+  "scripts": {
+    "build": "rollup -c && api-extractor run -l --diagnostics"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.34.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "rollup": "^3.20.2",
+    "tslib": "^2.5.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@types/lodash-es": "^4.17.7",
+    "lodash-es": "^4.17.21"
+  }
+}

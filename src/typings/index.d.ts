@@ -42,7 +42,7 @@ export interface ICheck {
  * 同步获取 Storage
  */
 export interface IGetStorage {
-  <T>(type: storageType, key: string): T
+  <T>(type: storageType, key: string): T | null
 }
 
 /**
@@ -50,7 +50,15 @@ export interface IGetStorage {
  * 异步获取 Storage
  */
 export interface IGetStorageAsync extends IGetStorage {
-  <T>(type: storageType, key: string): Promise<T>
+  <T>(type: storageType, key: string): Promise<T | null>
+}
+
+/**
+ * @public
+ * 设置 Storage 额外选项
+ */
+export interface ISetStorageOptions {
+  expireTime?: Date | number
 }
 
 /**
@@ -58,7 +66,7 @@ export interface IGetStorageAsync extends IGetStorage {
  * 同步/异步设置 Storage
  */
 export interface ISetStorage {
-  (type: storageType, key: string, data: unknown): void
+  (type: storageType, key: string, data: unknown, options?: ISetStorageOptions): void
 }
 
 /**

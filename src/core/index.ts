@@ -1,7 +1,7 @@
 import type * as Base from '../typings'
 
 import { storageTypes, storageFullTypes } from '../config'
-import { isString, isObjectLike } from 'lodash-es'
+import { isString, isObjectLike, isNumber } from 'lodash-es'
 
 const cookieEnabled = !!window.document.cookie || window.navigator.cookieEnabled
 
@@ -45,10 +45,24 @@ export const getStorage: Base.IGetStorage = (type, key) => {
 
   const storageType = getStorageType(type)
   const originalValue = window[storageType].getItem(key)
-  let resultValue
+  const expireTimeString: string|null = type === 'local' ? window[storageType].getItem(`${key}_EXPIRE_TIME`) : null
+  let resultValue = null,
+      expireTimeValue: number = 0
 
   try {
-    resultValue = JSON.parse(originalValue)
+    expireTimeValue = JSON.parse(expireTimeString) || 0
+  } catch (err) { }
+
+  try {
+    // 正常获取
+    if (expireTimeValue === 0 || expireTimeValue > Date.now()) {
+      resultValue = JSON.parse(originalValue)
+    }
+    // 过期移除
+    else {
+      removeStorage(type, key)
+      removeStorage(type, `${key}_EXPIRE_TIME`)
+    }
   } catch (err) {
     originalValue === 'undefined' && (resultValue = undefined)
   } finally {
@@ -71,15 +85,23 @@ export const getStorageAsync: Base.IGetStorageAsync = (type, key) => {
  * @param { String } type   本地存储类型 ('session' | 'local')
  * @param { String } key    存储键名
  * @param { unknown } data  存储的数据 (自动进行 JSON 转换)
+ * @param { Date|Number } options.expireTime  过期时间 (支持 Date 对象、数字时间戳)
  */
-export const setStorage: Base.ISetStorage = (type, key, data) => {
+export const setStorage: Base.ISetStorage = (type, key, data, options = {}) => {
   const errorMessage = check({ type, key, data })
   if (errorMessage) {
     throw new Error(errorMessage)
   }
 
+  let { expireTime } = options
   const storageType = getStorageType(type)
   window[storageType].setItem(key, JSON.stringify(data))
+
+  // 设置过期时间(只 local 生效)
+  expireTime = expireTime instanceof Date ? expireTime.getTime() : expireTime
+  if (type === 'local' && isNumber(expireTime) && expireTime > 0) {
+    window[storageType].setItem(`${key}_EXPIRE_TIME`, JSON.stringify(expireTime))
+  }
 }
 
 /**
@@ -88,8 +110,8 @@ export const setStorage: Base.ISetStorage = (type, key, data) => {
  * @param { String } key    存储键名
  * @param { unknown } data  存储的数据 (自动进行 JSON 转换)
  */
-export const setStorageAsync: Base.ISetStorage = (type, key, data) => {
-  Promise.resolve().then(() => setStorage(type, key, data))
+export const setStorageAsync: Base.ISetStorage = (type, key, data, options = {}) => {
+  Promise.resolve().then(() => setStorage(type, key, data, options))
 }
 
 /**
@@ -105,6 +127,7 @@ export const removeStorage: Base.IRemoveStorage = (type, key) => {
 
   const storageType = getStorageType(type)
   window[storageType].removeItem(key)
+  window[storageType].removeItem(`${key}_EXPIRE_TIME`)
 }
 
 /**

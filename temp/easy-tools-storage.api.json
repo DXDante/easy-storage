@@ -546,7 +546,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "T"
+                  "text": "T | null"
                 }
               ],
               "returnTypeTokenRange": {
@@ -647,7 +647,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "<T>"
+                  "text": "<T | null>"
                 }
               ],
               "returnTypeTokenRange": {
@@ -876,6 +876,15 @@
                 },
                 {
                   "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISetStorageOptions",
+                  "canonicalReference": "easy-tools-storage!ISetStorageOptions:interface"
+                },
+                {
+                  "kind": "Content",
                   "text": "): "
                 },
                 {
@@ -884,8 +893,8 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 9,
+                "endIndex": 10
               },
               "releaseTag": "Public",
               "overloadIndex": 1,
@@ -913,8 +922,62 @@
                     "endIndex": 6
                   },
                   "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
+                  },
+                  "isOptional": true
                 }
               ]
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "easy-tools-storage!ISetStorageOptions:interface",
+          "docComment": "/**\n * 设置 Storage 额外选项\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ISetStorageOptions "
+            }
+          ],
+          "fileUrlPath": "src/typings/index.d.ts",
+          "releaseTag": "Public",
+          "name": "ISetStorageOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "easy-tools-storage!ISetStorageOptions#expireTime:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "expireTime?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | number"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "expireTime",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
             }
           ],
           "extendsTokenRanges": []

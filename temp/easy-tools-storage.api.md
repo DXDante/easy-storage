@@ -43,13 +43,13 @@ export interface IClearStorage {
 // @public
 export interface IGetStorage {
     // (undocumented)
-    <T>(type: storageType, key: string): T
+    <T>(type: storageType, key: string): T | null
 }
 
 // @public
 export interface IGetStorageAsync extends IGetStorage {
     // (undocumented)
-    <T>(type: storageType, key: string): Promise<T>
+    <T>(type: storageType, key: string): Promise<T | null>
 }
 
 // @public
@@ -67,7 +67,13 @@ export interface IRemoveStorage {
 // @public
 export interface ISetStorage {
     // (undocumented)
-    (type: storageType, key: string, data: unknown): void
+    (type: storageType, key: string, data: unknown, options?: ISetStorageOptions): void
+}
+
+// @public
+export interface ISetStorageOptions {
+    // (undocumented)
+    expireTime?: Date | number
 }
 
 // @public
